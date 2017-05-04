@@ -87,3 +87,10 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Intellij
+.idea
+*.iml
+
+# Big files
+Datasets
