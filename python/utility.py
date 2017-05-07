@@ -65,3 +65,21 @@ def write_data_to_csv(data, path):
         csv_out.writerow(["year", "country", "event_count"])
         for row in data:
             csv_out.writerow(row)
+			
+#this function filters the organizations and NGO'S
+def filterCountries(codes):
+    countryList = list() 
+    for i, countryCode in enumerate(codes):
+        try:
+            countryList.append(pycountry.countries.get(alpha_3 = countryCode).alpha_3)
+        except:
+            print("not in list",countryCode)
+    return countryList
+
+def printCountries(codes):
+    for i, countryCode in enumerate(codes):
+        try:
+            print(pycountry.countries.get(alpha_3 = countryCode).name)
+        except:
+            print("not in list",countryCode)
+
