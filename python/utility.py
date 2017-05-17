@@ -1,3 +1,4 @@
+# coding=utf-8
 #############################
 # This module contains the functions for
 # reading the datasets to the data structures.
@@ -15,7 +16,8 @@ def convert_countryname_to_alpha3(countries):
         try:
             countries[i] = pycountry.countries.get(name = country).alpha_3
         except:
-            print("Error in converting to alpha 3 for country: " + country)
+            #print("Error in converting to alpha 3 for country: " + country)
+            pass
     return countries
 
 
@@ -27,16 +29,17 @@ def fix_commonname_to_formal(countries):
     countries[countries == 'Czech Republic'] = 'Czechia'
     countries[countries == 'Bolivia'] = 'Bolivia, Plurinational State of'
     countries[countries == 'Bosnia-Herzegovina'] = 'Bosnia and Herzegovina'
-    countries[countries == 'Venezuela'] = 'Venezuela, Bolivarian Republic of'
+    countries[countries == 'Venezuela'] = 'VEN'
     countries[countries == 'Taiwan'] = 'Taiwan, Province of China'
     countries[countries == 'South Korea'] = 'Korea, Republic of'
-    countries[countries == 'Democratic Republic of the Congo'] = 'Congo, The Democratic Republic of the'
+    countries[countries == 'Democratic Republic of the Congo'] = 'COD'
     countries[countries == 'Republic of the Congo'] = 'Congo'
     countries[countries == 'Macedonia'] = 'Macedonia, Republic of'
-    countries[countries == 'Ivory Coast'] = 'Côte d\'Ivoire'
+    countries[countries == 'Ivory Coast'] = 'CIV'
     countries[countries == 'Moldova'] = 'Moldova, Republic of'
     countries[countries == 'Laos'] = 'Lao People\'s Democratic Republic'
     countries[countries == 'Tanzania'] = 'Tanzania, United Republic of'
+    countries[countries == 'West Bank and Gaza Strip'] = 'Palestine, State of'
     return countries
 
 
