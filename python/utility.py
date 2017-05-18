@@ -7,6 +7,7 @@ from pandas import DataFrame, Series
 import pycountry
 import pandas as pd
 import csv
+import json
 
 
 # This functipon takes countries array and alpha code type
@@ -85,4 +86,15 @@ def printCountries(codes):
             print(pycountry.countries.get(alpha_3 = countryCode).name)
         except:
             print("not in list",countryCode)
+
+def change_country_names(countries):
+    countries = fix_commonname_to_formal(countries)
+    countries = convert_countryname_to_alpha3(countries)
+    return countries
+
+
+# return country dictionary which has neighbours of each country (ALPHA3)
+def get_countries_neighbours():
+    return json.loads(open('../Datasets/countries/neighbour.json').read())
+
 
